@@ -36,10 +36,4 @@ public class Student {
 		this.classroom = classroom;
 		this.grade = grade;
 	}
-
-	@Override
-	public String toString() {
-		return "Student [studentId=" + studentId + ", personInfo=" + personInfo + ", classroom=" + classroom
-				+ ", grade=" + grade + "]";
-	}
 }

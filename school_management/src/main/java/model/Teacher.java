@@ -37,13 +37,6 @@ public class Teacher {
 		this.gradeId = gradeId;
 		this.personInfo = personInfo;
 	}
-
-	@Override
-	public String toString() {
-		return "Teacher [teacherId=" + teacherId + ", subject=" + subject +  ", gradeId="
-				+ gradeId + ", personInfo=" + personInfo + "]";
-	}
-	
 }
 
 

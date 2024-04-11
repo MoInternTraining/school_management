@@ -26,9 +26,4 @@ public class Classroom {
 		this.classroomId = classroomId;
 		this.classroomName = classroomName;
 	}
-
-	@Override
-	public String toString() {
-		return "Classroom [classroomId=" + classroomId + ", classroomName=" + classroomName + "]";
-	}
 }
