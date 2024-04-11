@@ -26,9 +26,4 @@ public class Grade {
 		this.gradeId = gradeId;
 		this.gradeNo = gradeNo;
 	}
-
-	@Override
-	public String toString() {
-		return "Grade [gradeId=" + gradeId + ", gradeNo=" + gradeNo + "]";
-	}
 }
