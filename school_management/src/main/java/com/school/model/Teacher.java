@@ -1,4 +1,4 @@
-package model;
+package com.school.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -23,18 +23,24 @@ public class Teacher {
 	@Column(name = "subject")
 	private String subject;
 	
-	@Column(name = "greade_id")
-	private int gradeId;
+//	Instead of the following codes,
+//	@Column(name = "greade_id")
+//	private int gradeId;
+	
+//	We have to use these codes to join Teacher entity and Grade entity
+	@OneToOne
+	@JoinColumn(referencedColumnName = "grade_id")
+	private Grade grade;
 	
 	@OneToOne
 	@JoinColumn(referencedColumnName = "person_id")
 	private PersonInfo personInfo;
-	
-	public Teacher(int teacherId, String subject, int gradeId, PersonInfo personInfo) {
+
+	public Teacher(int teacherId, String subject, Grade grade, PersonInfo personInfo) {
 		super();
 		this.teacherId = teacherId;
 		this.subject = subject;
-		this.gradeId = gradeId;
+		this.grade = grade;
 		this.personInfo = personInfo;
 	}
 }

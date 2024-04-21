@@ -1,14 +1,18 @@
-package model;
+package com.school.model;
 
 import java.sql.Date;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Data;
 
 @Data
+@Entity
+@Table(name = "person_info")
 public class PersonInfo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

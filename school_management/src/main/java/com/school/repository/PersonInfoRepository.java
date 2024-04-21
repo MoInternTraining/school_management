@@ -1,4 +1,4 @@
-package repository;
+package com.school.repository;
 
 public class PersonInfoRepository {
 

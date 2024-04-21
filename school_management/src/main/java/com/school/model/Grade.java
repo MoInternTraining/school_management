@@ -1,10 +1,14 @@
-package model;
+package com.school.model;
+
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -20,6 +24,12 @@ public class Grade {
 	
 	@Column(name = "grade_no")
 	private int gradeNo;
+	
+	@OneToMany(mappedBy = "grade")
+	private List<Student> students;
+	
+	@OneToMany(mappedBy = "grade")
+	private List<Teacher> teachers;
 
 	public Grade(int gradeId, int gradeNo) {
 		super();
