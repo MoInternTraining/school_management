@@ -17,14 +17,14 @@ public class SchoolApp {
 		PersonInfoService personInfoService = ctx.getBean(PersonInfoService.class);
 		StudentService studentService = ctx.getBean(StudentService.class);
 		
-//		personInfoService.keepPersonInfo(new PersonInfo("Mg Mg", "5-7-2005", 'M', "U Ba", "09-123456789", "MgMg123@gmail.com", "Yangon"));
-		personInfoService.keepPersonInfo(new PersonInfo("Hla Hla", "10-10-2008", 'F', "U Kaung", "09-567567567", "HlaHla567@gmail.com", "Mandalay"));
-		personInfoService.keepPersonInfo(new PersonInfo("Tun Tun", "3-8-2006", 'M', "U Soe", "09-987987987", "TunTun987@gmail.com", "Mandalay"));
+		PersonInfo personInfo = new PersonInfo("Mg Mg", "5-7-2005", 'M', "U Ba", "09-123456789", "MgMg123@gmail.com", "Yangon");
+		Classroom classroom = new Classroom("Jasmine");
+		Grade grade = new Grade(1);
 		
-//		PersonInfo pInfo = new PersonInfo();
-//		Classroom cls = new Classroom();
-//		Grade g = new Grade();
+//		personInfoService.keepPersonInfo(new PersonInfo("Hla Hla", "10-10-2008", 'F', "U Kaung", "09-567567567", "HlaHla567@gmail.com", "Mandalay"));
+//		personInfoService.keepPersonInfo(new PersonInfo("Tun Tun", "3-8-2006", 'M', "U Soe", "09-987987987", "TunTun987@gmail.com", "Mandalay"));
 		
-		studentService.keepStudentRecord(new Student(new PersonInfo(1), new Classroom(1), new Grade(1)));
+		
+		studentService.keepStudentRecord(new Student(personInfo, classroom, grade));
 	}
 }

@@ -15,6 +15,7 @@ public class StudentServiceImpl implements StudentService {
 	private StudentRepository studentRepository;
 	
 	public void keepStudentRecord(Student student) {
+		
 		this.studentRepository.saveAndFlush(student);
 	}
 }
