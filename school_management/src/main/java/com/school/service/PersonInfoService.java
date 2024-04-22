@@ -1,5 +1,8 @@
 package com.school.service;
 
-public interface PersonInfoService {
+import com.school.model.PersonInfo;
 
+public interface PersonInfoService {
+	
+	public void keepPersonInfo(PersonInfo personInfo); 
 }

@@ -29,12 +29,23 @@ public class Classroom {
 //	Instead, mappedBy is needed
 	@OneToMany(mappedBy = "classroom")
 	private List<Student> students;
+	
+	
 
 	public Classroom(int classroomId, String classroomName, List<Student> students) {
 		super();
 		this.classroomId = classroomId;
 		this.classroomName = classroomName;
 		this.students = students;
+	}
+	
+	public Classroom() {
+		super();
+	}
+
+	public Classroom(int classroomId) {
+		super();
+		this.classroomId = classroomId;
 	}
 	
 }

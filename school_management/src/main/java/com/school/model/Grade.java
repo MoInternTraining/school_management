@@ -30,10 +30,22 @@ public class Grade {
 	
 	@OneToMany(mappedBy = "grade")
 	private List<Teacher> teachers;
-
+	
+	
+	
 	public Grade(int gradeId, int gradeNo) {
 		super();
 		this.gradeId = gradeId;
 		this.gradeNo = gradeNo;
 	}
+	
+	public Grade() {
+		super();
+	}
+
+	public Grade(int gradeId) {
+		super();
+		this.gradeId = gradeId;
+	}
+	
 }

@@ -29,11 +29,14 @@ public class Student {
 	@JoinColumn(referencedColumnName = "grade_id")
 	private Grade grade;
 
-	public Student(int studentId, PersonInfo personInfo, Classroom classroom, Grade grade) {
+	public Student(PersonInfo personInfo, Classroom classroom, Grade grade) {
 		super();
-		this.studentId = studentId;
 		this.personInfo = personInfo;
 		this.classroom = classroom;
 		this.grade = grade;
+	}
+
+	public Student() {
+		super();
 	}
 }
