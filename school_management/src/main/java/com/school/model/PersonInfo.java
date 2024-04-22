@@ -23,7 +23,7 @@ public class PersonInfo {
 	private String name;
 	
 	@Column(name = "dob")
-	private Date dob;
+	private String dob;
 	
 	@Column(name = "gender")
 	private char gender;
@@ -41,13 +41,12 @@ public class PersonInfo {
 	private String address;
 	
 	public PersonInfo() {
-		
+		super();
 	}
 	
-	public PersonInfo(int personId, String name, Date dob, char gender, String fatherName, String phoneNo, String email,
+	public PersonInfo(String name, String dob, char gender, String fatherName, String phoneNo, String email,
 			String address) {
 		super();
-		this.personId = personId;
 		this.name = name;
 		this.dob = dob;
 		this.gender = gender;
@@ -55,5 +54,10 @@ public class PersonInfo {
 		this.phoneNo = phoneNo;
 		this.email = email;
 		this.address = address;
+	}
+
+	public PersonInfo(int personId) {
+		super();
+		this.personId = personId;
 	}
 }
