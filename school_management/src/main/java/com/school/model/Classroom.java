@@ -30,9 +30,11 @@ public class Classroom {
 	@OneToMany(mappedBy = "classroom")
 	private List<Student> students;
 
-	public Classroom(int classroomId, String classroomName) {
+	public Classroom(int classroomId, String classroomName, List<Student> students) {
 		super();
 		this.classroomId = classroomId;
 		this.classroomName = classroomName;
+		this.students = students;
 	}
+	
 }
