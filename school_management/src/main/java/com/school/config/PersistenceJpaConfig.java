@@ -1,4 +1,4 @@
-package config;
+package com.school.config;
 
 import java.util.Properties;
 
@@ -24,8 +24,8 @@ import jakarta.persistence.EntityManagerFactory;
 @Configuration
 @EnableTransactionManagement
 @PropertySource({ "classpath:postgres.properties" })
-@ComponentScan({ "com.lynn.user" })
-@EnableJpaRepositories("com.lynn.user.repository")
+@ComponentScan({ "com.school" })
+@EnableJpaRepositories("com.school.repository")
 public class PersistenceJpaConfig {
 	@Autowired
 	private Environment env;
@@ -50,7 +50,7 @@ public class PersistenceJpaConfig {
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		final LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
 		entityManagerFactoryBean.setDataSource(getDataSource());
-		entityManagerFactoryBean.setPackagesToScan(new String[] { "com.lynn.user.model" });
+		entityManagerFactoryBean.setPackagesToScan(new String[] { "com.school.model" });
 
 		final HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		entityManagerFactoryBean.setJpaVendorAdapter(vendorAdapter);
@@ -61,14 +61,14 @@ public class PersistenceJpaConfig {
 
 	final Properties additionalProperties() {
 		final Properties hibernateProperties = new Properties();
-//		hibernateProperties.setProperty("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
-		hibernateProperties.setProperty("hibernate.dialect", env.getProperty("hibernate.dialect"));
+		hibernateProperties.setProperty("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
+//		hibernateProperties.setProperty("hibernate.dialect", env.getProperty("hibernate.dialect"));
 		hibernateProperties.setProperty("hibernate.cache.use_second_level_cache",
 				env.getProperty("hibernate.cache.use_second_level_cache"));
 		hibernateProperties.setProperty("hibernate.cache.use_query_cache",
 				env.getProperty("hibernate.cache.use_query_cache"));
-		// hibernateProperties.setProperty("hibernate.globally_quoted_identifiers",
-		// "true");
+//		 hibernateProperties.setProperty("hibernate.globally_quoted_identifiers",
+//		 "true");
 		return hibernateProperties;
 	}
 //
