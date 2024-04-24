@@ -15,6 +15,15 @@ public class StudentServiceImpl implements StudentService {
 	private StudentRepository studentRepository;
 	
 	public void keepStudentRecord(Student student) {
+		
 		this.studentRepository.saveAndFlush(student);
+	}
+	
+	public void deleteStudentAllRecord() {
+		this.studentRepository.deleteAll();
+	}
+	
+	public int getGradeID(int grade_id) {
+		return this.studentRepository.findGradeID(grade_id);
 	}
 }

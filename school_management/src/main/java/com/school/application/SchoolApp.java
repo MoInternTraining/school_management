@@ -8,23 +8,34 @@ import com.school.model.Classroom;
 import com.school.model.Grade;
 import com.school.model.PersonInfo;
 import com.school.model.Student;
+import com.school.model.Teacher;
 import com.school.service.PersonInfoService;
 import com.school.service.StudentService;
+import com.school.service.TeacherService;
 
 public class SchoolApp {
 	public static void main(String[] args) {
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(ApplicationConfig.class);
-		PersonInfoService personInfoService = ctx.getBean(PersonInfoService.class);
 		StudentService studentService = ctx.getBean(StudentService.class);
 		
-//		personInfoService.keepPersonInfo(new PersonInfo("Mg Mg", "5-7-2005", 'M', "U Ba", "09-123456789", "MgMg123@gmail.com", "Yangon"));
-		personInfoService.keepPersonInfo(new PersonInfo("Hla Hla", "10-10-2008", 'F', "U Kaung", "09-567567567", "HlaHla567@gmail.com", "Mandalay"));
-		personInfoService.keepPersonInfo(new PersonInfo("Tun Tun", "3-8-2006", 'M', "U Soe", "09-987987987", "TunTun987@gmail.com", "Mandalay"));
+		TeacherService teacherService = ctx.getBean(TeacherService.class);
 		
-//		PersonInfo pInfo = new PersonInfo();
-//		Classroom cls = new Classroom();
-//		Grade g = new Grade();
+		PersonInfo studentPersonInfo = new PersonInfo("Mg Mg", "5-7-2005", 'M', "U Ba", "09-123456789", "MgMg123@gmail.com", "Yangon");
+		Classroom classroom = new Classroom("Jasmine");
 		
-		studentService.keepStudentRecord(new Student(new PersonInfo(1), new Classroom(1), new Grade(1)));
+		Student student = new Student();
+		
+//		Grade gradeTaughtByTeacher = new Grade(1);
+//		PersonInfo teacherPersonInfo = new PersonInfo("DawAyeAye", "3-10-1880", 'F', "UThaung", "09-345345345", "fhjnfhgg345@gmail.com", "Yangon");
+
+//		personInfoService.keepPersonInfo(new PersonInfo("Hla Hla", "10-10-2008", 'F', "U Kaung", "09-567567567", "HlaHla567@gmail.com", "Mandalay"));
+//		personInfoService.keepPersonInfo(new PersonInfo("Tun Tun", "3-8-2006", 'M', "U Soe", "09-987987987", "TunTun987@gmail.com", "Mandalay"));
+		
+		
+		studentService.keepStudentRecord(new Student(studentPersonInfo, classroom, student.setGradeID(studentService.getGradeID(3))));
+		
+//		teacherService.keepTeacherRecord(new Teacher("English", gradeTaughtByTeacher, teacherPersonInfo));
+		
+//		studentService.deleteStudentAllRecord();
 	}
 }

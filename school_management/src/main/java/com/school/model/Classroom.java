@@ -18,7 +18,7 @@ import lombok.Data;
 public class Classroom {
 	
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "classroom_id")
 	private int classroomId;
 	
@@ -32,20 +32,13 @@ public class Classroom {
 	
 	
 
-	public Classroom(int classroomId, String classroomName, List<Student> students) {
+	public Classroom(String classroomName) {
 		super();
-		this.classroomId = classroomId;
 		this.classroomName = classroomName;
-		this.students = students;
 	}
 	
 	public Classroom() {
 		super();
-	}
-
-	public Classroom(int classroomId) {
-		super();
-		this.classroomId = classroomId;
 	}
 	
 }
