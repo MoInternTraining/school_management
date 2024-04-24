@@ -1,5 +1,6 @@
 package com.school.service;
 
+import com.school.model.Grade;
 import com.school.model.Student;
 
 public interface StudentService {
@@ -7,5 +8,4 @@ public interface StudentService {
 	
 	public void deleteStudentAllRecord();
 	
-	public int getGradeID(int grade_id);
 }

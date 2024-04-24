@@ -3,6 +3,7 @@ package com.school.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.school.model.Grade;
 import com.school.model.Student;
 import com.school.repository.StudentRepository;
 
@@ -21,9 +22,5 @@ public class StudentServiceImpl implements StudentService {
 	
 	public void deleteStudentAllRecord() {
 		this.studentRepository.deleteAll();
-	}
-	
-	public int getGradeID(int grade_id) {
-		return this.studentRepository.findGradeID(grade_id);
 	}
 }
