@@ -18,7 +18,7 @@ import lombok.Data;
 public class Grade {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "grade_id")
 	private int gradeId;
 	

@@ -18,7 +18,7 @@ import lombok.Data;
 public class Classroom {
 	
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "classroom_id")
 	private int classroomId;
 	
