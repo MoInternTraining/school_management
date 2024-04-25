@@ -38,12 +38,17 @@ public class Teacher {
 	@JoinColumn(referencedColumnName = "person_id")
 	private PersonInfo personInfo;
 
-	public Teacher(String subject, Grade grade, PersonInfo personInfo) {
+	public Teacher(PersonInfo personInfo, Grade grade, String subject) {
 		super();
 		this.subject = subject;
 		this.grade = grade;
 		this.personInfo = personInfo;
 	}
+	
+	public Teacher(PersonInfo teacherPersonInfo) {
+		this.personInfo = teacherPersonInfo;
+	}
+	
 }
 
 
