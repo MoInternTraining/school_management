@@ -45,8 +45,10 @@ public class Teacher {
 		this.personInfo = personInfo;
 	}
 	
-	public Teacher(PersonInfo teacherPersonInfo) {
+	public Teacher(PersonInfo teacherPersonInfo, String subject) {
+		super();
 		this.personInfo = teacherPersonInfo;
+		this.subject = subject;
 	}
 	
 }
