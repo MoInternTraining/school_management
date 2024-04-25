@@ -36,7 +36,7 @@ public class TeacherServiceImpl implements TeacherService{
 
 	@Override
 	public void keepTeacherRecord(PersonInfo teacherPersonInfo, int gradeId, String subject) {
-		Teacher tch = new Teacher(teacherPersonInfo);
+		Teacher tch = new Teacher(teacherPersonInfo, subject);
 		tch.setGrade(gradeRepository.findById(gradeId).get());
 		this.teacherRepository.save(tch);
 	}
