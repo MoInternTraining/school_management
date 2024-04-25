@@ -24,14 +24,14 @@ public class SchoolApp {
 		GradeService gradeService = ctx.getBean(GradeService.class);
 		
 		PersonInfo studentPersonInfo = new PersonInfo("Mg Mg", "5-7-2005", 'M', "U Ba", "09-123456789", "MgMg123@gmail.com", "Yangon");
-		Classroom classroom = new Classroom("Jasmine");
 //		
 //		Grade grade = gradeService.getGradeById(4);
-		studentService.keepStudentRecord(studentPersonInfo, 3, 5);
+//		studentService.keepStudentRecord(studentPersonInfo, 3, 5);
 		
 		
 //		Grade gradeTaughtByTeacher = new Grade(1);
-//		PersonInfo teacherPersonInfo = new PersonInfo("DawAyeAye", "3-10-1880", 'F', "UThaung", "09-345345345", "fhjnfhgg345@gmail.com", "Yangon");
+		PersonInfo teacherPersonInfo = new PersonInfo("DawAyeAye", "3-10-1880", 'F', "UThaung", "09-345345345", "fhjnfhgg345@gmail.com", "Yangon");
+		teacherService.keepTeacherRecord(teacherPersonInfo, 3, "Math");
 
 //		personInfoService.keepPersonInfo(new PersonInfo("Hla Hla", "10-10-2008", 'F', "U Kaung", "09-567567567", "HlaHla567@gmail.com", "Mandalay"));
 //		personInfoService.keepPersonInfo(new PersonInfo("Tun Tun", "3-8-2006", 'M', "U Soe", "09-987987987", "TunTun987@gmail.com", "Mandalay"));
