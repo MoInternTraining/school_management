@@ -1,6 +1,7 @@
 package com.school.model;
 
 import java.util.List;
+import java.util.Optional;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -48,4 +49,7 @@ public class Grade {
 		this.students = students;
 		this.teachers = teachers;
 	}
-}
+
+	public Grade(Grade grade) {
+		this.gradeId = grade.getGradeId();
+	}}
