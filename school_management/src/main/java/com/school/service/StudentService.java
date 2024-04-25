@@ -1,11 +1,17 @@
 package com.school.service;
 
+import com.school.model.Classroom;
+import com.school.model.Grade;
+import com.school.model.PersonInfo;
 import com.school.model.Student;
 
 public interface StudentService {
-	public void keepStudentRecord(Student student);
+	public Student keepStudentRecord(Student student);
 	
 	public void deleteStudentAllRecord();
+
+	public void updateStudentRecord(Student student);
+
+	public void keepStudentRecord(PersonInfo studentPersonInfo, int i, int j);
 	
-	public int getGradeID(int grade_id);
 }
