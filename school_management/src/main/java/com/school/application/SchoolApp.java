@@ -17,33 +17,19 @@ import com.school.service.TeacherService;
 public class SchoolApp {
 	public static void main(String[] args) {
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(ApplicationConfig.class);
+
 		StudentService studentService = ctx.getBean(StudentService.class);
-		
 		TeacherService teacherService = ctx.getBean(TeacherService.class);
-		
 		GradeService gradeService = ctx.getBean(GradeService.class);
 		
 		PersonInfo studentPersonInfo = new PersonInfo("Mg Mg", "5-7-2005", 'M', "U Ba", "09-123456789", "MgMg123@gmail.com", "Yangon");
-//		
-//		Grade grade = gradeService.getGradeById(4);
-//		studentService.keepStudentRecord(studentPersonInfo, 3, 5);
+
+		studentService.keepStudentRecord(studentPersonInfo, 3, 5);
 		
 		
-//		Grade gradeTaughtByTeacher = new Grade(1);
 		PersonInfo teacherPersonInfo = new PersonInfo("DawAyeAye", "3-10-1880", 'F', "UThaung", "09-345345345", "fhjnfhgg345@gmail.com", "Yangon");
 		teacherService.keepTeacherRecord(teacherPersonInfo, 3, "Math");
 
-//		personInfoService.keepPersonInfo(new PersonInfo("Hla Hla", "10-10-2008", 'F', "U Kaung", "09-567567567", "HlaHla567@gmail.com", "Mandalay"));
-//		personInfoService.keepPersonInfo(new PersonInfo("Tun Tun", "3-8-2006", 'M', "U Soe", "09-987987987", "TunTun987@gmail.com", "Mandalay"));
-		
-		
-//		studentService.keepStudentRecord(new Student(studentPersonInfo, classroom, student.setGradeID(studentService.getGradeID(3))));
 
-		//		Student student = new Student(studentPersonInfo, classroom, grade.getGradeId());
-//		studentService.keepStudentRecord(student);
-		
-//		teacherService.keepTeacherRecord(new Teacher("English", gradeTaughtByTeacher, teacherPersonInfo));
-		
-//		studentService.deleteStudentAllRecord();
 	}
 }
