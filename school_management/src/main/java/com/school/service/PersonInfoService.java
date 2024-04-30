@@ -5,4 +5,6 @@ import com.school.model.PersonInfo;
 public interface PersonInfoService {
 	
 	public void keepPersonInfo(PersonInfo personInfo); 
+	
+//	public void updateOrCreatePersonInfo(PersonInfo personInfo);
 }

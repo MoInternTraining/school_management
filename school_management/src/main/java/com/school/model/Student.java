@@ -23,15 +23,15 @@ public class Student {
 	private int studentId;
 	
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(referencedColumnName = "person_id")
+	@JoinColumn(referencedColumnName = "person_id", unique = false)
 	private PersonInfo personInfo;
 	
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(referencedColumnName = "classroom_id")
+	@JoinColumn(referencedColumnName = "classroom_id", unique = false)
 	private Classroom classroom;
 	
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(referencedColumnName = "grade_id")
+	@JoinColumn(referencedColumnName = "grade_id", unique = false)
 	private Grade grade;
 
 	public Student(PersonInfo personInfo, Classroom classroom, Grade grade) {

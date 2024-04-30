@@ -36,19 +36,21 @@ public class SchoolApp {
 //		PersonInfo teacherPersonInfo = new PersonInfo("Daw Mya", "9-3-1990", 'F', "U Win Aung", "09-545618945", "DawMya987@gmail.com", "Yangon");
 //
 //		teacherService.keepTeacherRecord(teacherPersonInfo, 10, "Math");
-		
-		PersonInfo teacherPersonInfo = new PersonInfo("DawMya", "9-3-1990", 'F', "UWinAung", "09-545618945", "Mya987@gmail.com", "Yangon");
+//		
+		PersonInfo teacherPersonInfo = new PersonInfo("UHla", "9-3-1990", 'F', "U Htoo Aung", "09-545618945", "uhla@gmail.com", "Yangon");
+//		teacherService.keepTeacherRecord(teacherPersonInfo, 10, "Math");
+		Teacher teacher = new Teacher(20);
+		teacherService.updateOrCreateTeacherRecord(teacherPersonInfo, teacher,  3, "Python");
 
-		teacherService.keepTeacherRecord(teacherPersonInfo, 10, "Math");
 
-//		PersonInfo studentPersonInfo = new PersonInfo("Mg Mg", "5-7-2005", 'M', "U Ba", "09-123456789", "MgMg123@gmail.com", "Yangon");
 //		studentService.keepStudentRecord(studentPersonInfo);
 //		studentService.keepStudentRecord(studentPersonInfo, 2, 5);
 		
-		PersonInfo teacherPersonInfo = new PersonInfo("DawAyeAye", "3-10-1880", 'F', "UThaung", "09-345345345", "fhjnfhgg345@gmail.com", "Yangon");
-		teacherService.keepTeacherRecord(teacherPersonInfo, 4, "Math");
+//		PersonInfo teacherPersonInfo1 = new PersonInfo("DawAyeAye", "3-10-1880", 'F', "UThaung", "09-345345345", "fhjnfhgg345@gmail.com", "Yangon");
+//		teacherService.keepTeacherRecord(teacherPersonInfo1, 4, "Math");
 
-
+		teacherService.deleteTeacherRecord();
+		
 //		personInfoService.keepPersonInfo(new PersonInfo("Hla Hla", "10-10-2008", 'F', "U Kaung", "09-567567567", "HlaHla567@gmail.com", "Mandalay"));
 //		personInfoService.keepPersonInfo(new PersonInfo("Tun Tun", "3-8-2006", 'M', "U Soe", "09-987987987", "TunTun987@gmail.com", "Mandalay"));
 		
@@ -56,10 +58,19 @@ public class SchoolApp {
 //		studentService.keepStudentRecord(new Student(studentPersonInfo, classroom, student.setGradeID(studentService.getGradeID(3))));
 
 		//		Student student = new Student(studentPersonInfo, classroom, grade.getGradeId());
-//		PersonInfo studentPersonInfo = new PersonInfo("Mg Mg", "5-7-2005", 'M', "U Ba", "09-123456789", "MgMg123@gmail.com", "Yangon");
+//		PersonInfo studentPersonInfo = new PersonInfo("MgMg", "5-7-2005", 'F', "U Ba", "09-123456789", "MgMg123@gmail.com", "Yangon");
+		
+		
+		
+//		PersonInfo studentPersonInfo1 = new PersonInfo("MgMg", "5-7-2005", 'M', "UBa", "09-123456789", "MgMg123@gmail.com", "Yangon");
+//
 //
 //		studentService.keepStudentRecord(studentPersonInfo, 2, 6);
+//		studentService.keepStudentRecord(studentPersonInfo1, 2, 6);
 		
+		
+		
+//		
 //		teacherService.keepTeacherRecord(new Teacher("English", gradeTaughtByTeacher, teacherPersonInfo));
 		
 //		studentService.deleteStudentAllRecord();

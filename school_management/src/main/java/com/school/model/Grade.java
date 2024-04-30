@@ -21,7 +21,7 @@ public class Grade {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "grade_id")
+	@Column(name = "grade_id", unique = false)
 	private int gradeId;
 	
 	@Column(name = "grade_no")

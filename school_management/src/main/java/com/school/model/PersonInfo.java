@@ -60,4 +60,18 @@ public class PersonInfo {
 		super();
 		this.personId = personId;
 	}
+
+	public PersonInfo(int personId, String name, String dob, char gender, String fatherName, String phoneNo,
+			String email, String address) {
+		super();
+		this.personId = personId;
+		this.name = name;
+		this.dob = dob;
+		this.gender = gender;
+		this.fatherName = fatherName;
+		this.phoneNo = phoneNo;
+		this.email = email;
+		this.address = address;
+	}
+	
 }

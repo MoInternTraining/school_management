@@ -30,25 +30,44 @@ public class Teacher {
 //	private int gradeId;
 	
 //	We have to use these codes to join Teacher entity and Grade entity
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(referencedColumnName = "grade_id")
+	@OneToOne(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+	@JoinColumn(name = "grade_id", referencedColumnName = "grade_id", unique = false)
 	private Grade grade;
 	
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(referencedColumnName = "person_id")
+	@JoinColumn(name = "person_id", referencedColumnName = "person_id", unique = false)
 	private PersonInfo personInfo;
-
-	public Teacher(PersonInfo personInfo, Grade grade, String subject) {
+	
+	public Teacher(PersonInfo teacherPersonInfo, Grade grade, String subject) {
 		super();
 		this.subject = subject;
 		this.grade = grade;
-		this.personInfo = personInfo;
+		this.personInfo = teacherPersonInfo;
 	}
 	
 	public Teacher(PersonInfo teacherPersonInfo, String subject) {
 		super();
 		this.personInfo = teacherPersonInfo;
 		this.subject = subject;
+	}
+
+	
+
+	public Teacher() {
+		super();
+	}
+
+	public Teacher(int teacherId, String subject, Grade grade, PersonInfo personInfo) {
+		super();
+		this.teacherId = teacherId;
+		this.subject = subject;
+		this.grade = grade;
+		this.personInfo = personInfo;
+	}
+
+	public Teacher(int teacherId) {
+		super();
+		this.teacherId = teacherId;
 	}
 	
 }

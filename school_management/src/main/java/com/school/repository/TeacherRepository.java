@@ -8,4 +8,5 @@ import com.school.model.Teacher;
 @Repository
 public interface TeacherRepository extends JpaRepository<Teacher, Integer>{
 
+	
 }

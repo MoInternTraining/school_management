@@ -20,7 +20,7 @@ public class Classroom {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "classroom_id")
+	@Column(name = "classroom_id", unique = false)
 	private int classroomId;
 	
 	@Column(name = "classroom_name")
@@ -30,8 +30,6 @@ public class Classroom {
 //	Instead, mappedBy is needed
 	@OneToMany(mappedBy = "classroom", fetch = FetchType.LAZY)
 	private List<Student> students;
-	
-	
 
 	public Classroom(String classroomName) {
 		super();
