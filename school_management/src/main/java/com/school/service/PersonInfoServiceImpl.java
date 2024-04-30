@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.school.model.PersonInfo;
 import com.school.repository.PersonInfoRepository;
 
+import antlr.collections.List;
 import jakarta.transaction.Transactional;
 
 @Service
@@ -19,7 +20,6 @@ public class PersonInfoServiceImpl implements PersonInfoService {
 	public void keepPersonInfo(PersonInfo personInfo) {
 		this.personInfoRepository.saveAndFlush(personInfo);
 	}
-
 //	@Override
 //	public void updateOrCreatePersonInfo(PersonInfo personInfo) {
 //		Optional<PersonInfo> opPersonInfo = personInfoRepository.findById(personInfo.getPersonId());
@@ -33,4 +33,5 @@ public class PersonInfoServiceImpl implements PersonInfoService {
 //			per.set
 //		}
 //	}
+
 }

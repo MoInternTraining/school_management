@@ -1,6 +1,7 @@
 package com.school.service;
 
 import java.util.NoSuchElementException;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -102,10 +103,29 @@ public class TeacherServiceImpl implements TeacherService{
         }
     }
 	
+//	public void updateOrCreateTeacherRecord(Teacher teacher, int gradeId, String subject) {
+//		Optional<Teacher> opteacher = teacherRepository.findById(teacher.getTeacherId());
+//		Teacher tch;
+//		if (opteacher.isPresent()) {
+//			tch = opteacher.get();
+//			tch.setPersonInfo(teacher.getPersonInfo());
+//			tch.setGrade(teacher.getGrade());
+//			tch.setSubject(teacher.getSubject());
+//			this.teacherRepository.save(tch);
+//		}
+//		else {
+//			this.teacherRepository.save(teacher);
+//		}
+//	}
+	
 	@Override
 	public void keepTeacherRecord(PersonInfo teacherPersonInfo, int gradeId, String subject) {
 		Teacher tch = new Teacher(teacherPersonInfo, subject);
 		tch.setGrade(gradeRepository.findById(gradeId).get());
 		this.teacherRepository.save(tch);
+	}
+	
+	public List<Teacher> findAll() {
+		return this.teacherRepository.findAll();
 	}
 }
