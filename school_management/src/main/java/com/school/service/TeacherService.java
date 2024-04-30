@@ -1,5 +1,6 @@
-v  package com.school.service;
+package com.school.service;
 
+import com.school.model.Grade;
 import com.school.model.PersonInfo;
 import com.school.model.Student;
 import com.school.model.Teacher;
@@ -9,7 +10,7 @@ public interface TeacherService {
 	
 	public void deleteTeacherAllRecord();
 
-	public void updateTeacherRecord(Teacher teacher);
+	public void updateOrCreateTeacherRecord(PersonInfo personInfo, int id,int grade, String subject);
 
 	public void keepTeacherRecord(PersonInfo teacherPersonInfo, int gradeId, String subject);
 	
