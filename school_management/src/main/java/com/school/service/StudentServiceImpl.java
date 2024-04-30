@@ -1,5 +1,7 @@
 package com.school.service;
 
+import java.util.List;
+
 import javax.management.loading.ClassLoaderRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,5 +50,9 @@ public class StudentServiceImpl implements StudentService {
 		stu.setClassroom(classRepo.findById(classroomId).get());
 		stu.setGrade(gradeRepo.findById(gradeId).get());
 		this.studentRepository.save(stu);
+	}
+	
+	public List<Student> findStudents() {
+		return this.studentRepository.findAll();
 	}
 }

@@ -28,7 +28,7 @@ public class Classroom {
 	
 //  No need @JoinColumn annotation
 //	Instead, mappedBy is needed
-	@OneToMany(mappedBy = "classroom", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "classroom", fetch = FetchType.EAGER)
 	private List<Student> students;
 	
 	

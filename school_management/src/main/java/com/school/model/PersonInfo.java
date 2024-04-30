@@ -44,7 +44,7 @@ public class PersonInfo {
 		super();
 	}
 	
-	public PersonInfo(String name, String dob, char gender, String fatherName, String phoneNo, String email,
+	public PersonInfo(int personId, String name, String dob, char gender, String fatherName, String phoneNo, String email,
 			String address) {
 		super();
 		this.name = name;

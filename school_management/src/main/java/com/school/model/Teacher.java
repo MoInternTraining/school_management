@@ -31,7 +31,7 @@ public class Teacher {
 	
 //	We have to use these codes to join Teacher entity and Grade entity
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(referencedColumnName = "grade_id")
+	@JoinColumn(referencedColumnName = "grade_id", unique = false)
 	private Grade grade;
 	
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
@@ -49,6 +49,10 @@ public class Teacher {
 		super();
 		this.personInfo = teacherPersonInfo;
 		this.subject = subject;
+	}
+
+	public Teacher() {
+		super();
 	}
 	
 }

@@ -1,5 +1,7 @@
 package com.school.service;
 
+import java.util.List;
+
 import com.school.model.Classroom;
 import com.school.model.Grade;
 import com.school.model.PersonInfo;
@@ -14,4 +16,5 @@ public interface StudentService {
 
 	public void keepStudentRecord(PersonInfo studentPersonInfo, int i, int j);
 	
+	public List<Student> findStudents();
 }
