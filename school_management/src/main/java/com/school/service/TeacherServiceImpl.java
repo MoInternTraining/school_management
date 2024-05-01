@@ -81,26 +81,24 @@ public class TeacherServiceImpl implements TeacherService{
 	@Override
     public void updateOrCreateTeacherRecord(PersonInfo teacherPersonInfo, Teacher teacher, int gradeId, String subject) {
         Optional<Teacher> aTeacher = this.teacherRepository.findById(teacher.getTeacherId());
-        if (aTeacher.isEmpty()) {
-                Teacher tch = new Teacher();
+        Teacher tch = aTeacher.isPresent() ? aTeacher.get() : new Teacher();
+        if (!aTeacher.isPresent()) {
+//                Teacher tch = new Teacher();
 //                tch.setPersonInfo(entityManager.merge(teacherPersonInfo));
                 tch.setPersonInfo(teacherPersonInfo);
-                tch.setSubject(subject);
-                tch.setGrade(gradeRepository.findById(gradeId).get());
-                this.teacherRepository.save(tch);
         } 
         else {
-            Teacher tch = aTeacher.get();
+//            Teacher tch =  aTeacher.get();
             tch.getPersonInfo().setAddress(teacherPersonInfo.getAddress());
             tch.getPersonInfo().setDob(teacherPersonInfo.getDob());
             tch.getPersonInfo().setEmail(teacherPersonInfo.getEmail());
             tch.getPersonInfo().setFatherName(teacherPersonInfo.getFatherName());
             tch.getPersonInfo().setGender(teacherPersonInfo.getGender());
-            tch.getPersonInfo().setName(teacherPersonInfo.getName());
-            tch.setSubject(subject);
-            tch.setGrade(gradeRepository.findById(gradeId).get());
-            this.teacherRepository.save(tch);
+            tch.getPersonInfo().setName(teacherPersonInfo.getName());       
         }
+        tch.setSubject(subject);
+        tch.setGrade(gradeRepository.findById(gradeId).get());
+        this.teacherRepository.save(tch);
     }
 	
 //	public void updateOrCreateTeacherRecord(Teacher teacher, int gradeId, String subject) {

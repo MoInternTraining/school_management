@@ -33,10 +33,10 @@ public class SchoolApp {
 //		
 //		Grade grade = gradeService.getGradeById(4);
 //		studentService.keepStudentRecord(studentPersonInfo, 3, 5);
-		ClassroomService classroomService = ctx.getBean(ClassroomService.class);
-	
-		PersonInfo personInfo = new PersonInfo("SamuelChaungDu", "10-10-99", 'F', "UChaungDu", "598888", "@gmail.com", "Dagon");
-		teacherService.updateOrCreateTeacherRecord(personInfo, 4, 1, "Laravel");
+//		ClassroomService classroomService = ctx.getBean(ClassroomService.class);
+//	
+//		PersonInfo personInfo = new PersonInfo("SamuelChaungDu", "10-10-99", 'F', "UChaungDu", "598888", "@gmail.com", "Dagon");
+//		teacherService.updateOrCreateTeacherRecord(personInfo, 4, 1, "Laravel");
 
 		
 		List <Student> students1 = studentService.findAllStudents();
@@ -45,10 +45,10 @@ public class SchoolApp {
 //
 //		teacherService.keepTeacherRecord(teacherPersonInfo, 10, "Math");
 //		
-		PersonInfo teacherPersonInfo = new PersonInfo("UHla", "9-3-1990", 'F', "U Htoo Aung", "09-545618945", "uhla@gmail.com", "Yangon");
+		PersonInfo teacherPersonInfo = new PersonInfo("U Hla", "9-3-1990", 'F', "UHtooAung", "09-545618945", "uhla@gmail.com", "Yangon");
 //		teacherService.keepTeacherRecord(teacherPersonInfo, 10, "Math");
-		Teacher teacher = new Teacher(20);
-		teacherService.updateOrCreateTeacherRecord(teacherPersonInfo, teacher,  3, "Python");
+		Teacher teacher = new Teacher(17);
+		teacherService.updateOrCreateTeacherRecord(teacherPersonInfo, teacher,  3, "Java");
 
 
 //		studentService.keepStudentRecord(studentPersonInfo);
@@ -57,7 +57,7 @@ public class SchoolApp {
 //		PersonInfo teacherPersonInfo1 = new PersonInfo("DawAyeAye", "3-10-1880", 'F', "UThaung", "09-345345345", "fhjnfhgg345@gmail.com", "Yangon");
 //		teacherService.keepTeacherRecord(teacherPersonInfo1, 4, "Math");
 
-		teacherService.deleteTeacherRecord();
+//		teacherService.deleteTeacherRecord();
 		
 //		personInfoService.keepPersonInfo(new PersonInfo("Hla Hla", "10-10-2008", 'F', "U Kaung", "09-567567567", "HlaHla567@gmail.com", "Mandalay"));
 //		personInfoService.keepPersonInfo(new PersonInfo("Tun Tun", "3-8-2006", 'M', "U Soe", "09-987987987", "TunTun987@gmail.com", "Mandalay"));
@@ -82,9 +82,9 @@ public class SchoolApp {
 //		teacherService.keepTeacherRecord(new Teacher("English", gradeTaughtByTeacher, teacherPersonInfo));
 		
 //		studentService.deleteStudentAllRecord();
-		for (Student student : students1) {
-			System.out.println(student.getPersonInfo());
-		}
+//		for (Student student : students1) {
+//			System.out.println(student.getPersonInfo());
+//		}
 	}
 
 }
