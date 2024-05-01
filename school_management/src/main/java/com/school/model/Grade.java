@@ -15,34 +15,33 @@ import jakarta.persistence.Table;
 import lombok.Data;
 import net.bytebuddy.asm.Advice.This;
 
-@Data 
+@Data
 @Entity
 @Table(name = "grade")
 public class Grade {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "grade_id", unique = false)
 	private int gradeId;
-	
+
 	@Column(name = "grade_no")
 	private int gradeNo;
-	
+
 	@OneToMany(mappedBy = "grade", fetch = FetchType.EAGER)
 	private List<Student> students;
-	
+
 	@OneToMany(mappedBy = "grade", fetch = FetchType.EAGER)
 	private List<Teacher> teachers;
-	
+
 	public Grade(int gradeNo) {
 		super();
 		this.gradeNo = gradeNo;
 	}
-	
+
 	public Grade() {
 		super();
 	}
-	
 
 	public Grade(int gradeId, int gradeNo, List<Student> students, List<Teacher> teachers) {
 		super();
@@ -54,4 +53,5 @@ public class Grade {
 
 	public Grade(Grade grade) {
 		this.gradeId = grade.getGradeId();
-	}}
+	}
+}

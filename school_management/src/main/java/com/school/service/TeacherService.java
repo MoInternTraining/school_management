@@ -12,10 +12,14 @@ public interface TeacherService {
 	
 //	public List<Teacher> getAll();
 	
-	public void deleteTeacherRecord();
+	public void deleteTeacherRecord(int TeacherId);
 
 	public void updateOrCreateTeacherRecord(PersonInfo teacherPersonInfo, Teacher teacher, int gradeId, String subject);
 
 	public void keepTeacherRecord(PersonInfo teacherPersonInfo, int gradeId, String subject);
+	
+	public List<Teacher> findAll();
+	
+	public List<Teacher> findAllTeacher();
 	
 }

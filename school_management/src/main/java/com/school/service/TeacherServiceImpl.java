@@ -38,8 +38,8 @@ public class TeacherServiceImpl implements TeacherService{
 	}
 
 	@Override
-	public void deleteTeacherRecord() {
-		this.teacherRepository.deleteAll();		
+	public void deleteTeacherRecord(int personId) {
+		this.teacherRepository.deleteById(personId);		
 	}
 
 //	@Override
@@ -124,6 +124,11 @@ public class TeacherServiceImpl implements TeacherService{
 	}
 	
 	public List<Teacher> findAll() {
-		return this.teacherRepository.findAll();
+		List<Teacher> teacher = this.teacherRepository.findAll();
+		return teacher;
 	}
+	
+	public List<Teacher> findAllTeacher(){
+		List<Teacher> teacher = this.teacherRepository.findAll();
+		return teacher;	}
 }

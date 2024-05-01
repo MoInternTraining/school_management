@@ -1,6 +1,7 @@
 package com.school.application;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.context.ApplicationContext;
@@ -39,16 +40,15 @@ public class SchoolApp {
 //		teacherService.updateOrCreateTeacherRecord(personInfo, 4, 1, "Laravel");
 
 		
-		List <Student> students1 = studentService.findAllStudents();
 		
 //		PersonInfo teacherPersonInfo = new PersonInfo("Daw Mya", "9-3-1990", 'F', "U Win Aung", "09-545618945", "DawMya987@gmail.com", "Yangon");
 //
 //		teacherService.keepTeacherRecord(teacherPersonInfo, 10, "Math");
 //		
-		PersonInfo teacherPersonInfo = new PersonInfo("U Hla", "9-3-1990", 'F', "UHtooAung", "09-545618945", "uhla@gmail.com", "Yangon");
+//		PersonInfo teacherPersonInfo = new PersonInfo("U Hla", "9-3-1990", 'F', "UHtooAung", "09-545618945", "uhla@gmail.com", "Yangon");
 //		teacherService.keepTeacherRecord(teacherPersonInfo, 10, "Math");
-		Teacher teacher = new Teacher(17);
-		teacherService.updateOrCreateTeacherRecord(teacherPersonInfo, teacher,  3, "Java");
+//		Teacher teacher = new Teacher(17);
+//		teacherService.updateOrCreateTeacherRecord(teacherPersonInfo, teacher,  3, "Java");
 
 
 //		studentService.keepStudentRecord(studentPersonInfo);
@@ -80,11 +80,17 @@ public class SchoolApp {
 		
 //		
 //		teacherService.keepTeacherRecord(new Teacher("English", gradeTaughtByTeacher, teacherPersonInfo));
-		
-//		studentService.deleteStudentAllRecord();
+//		List <Student> students1 = studentService.findAllStudents();
+//		List<Teacher> teacher1 = teacherService.findAllTeacher();
 //		for (Student student : students1) {
 //			System.out.println(student.getPersonInfo());
 //		}
+		
+		teacherService.deleteTeacherRecord(18);
+		
+		for(Teacher teacher : teacherService.findAllTeacher()) {
+			System.out.println(teacher.getPersonInfo() + teacher.getSubject());
+		}
 	}
 
 }
