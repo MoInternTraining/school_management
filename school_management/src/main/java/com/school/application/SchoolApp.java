@@ -86,11 +86,31 @@ public class SchoolApp {
 //			System.out.println(student.getPersonInfo());
 //		}
 		
-		teacherService.deleteTeacherRecord(18);
+//		teacherService.deleteTeacherRecord(18);
 		
-		for(Teacher teacher : teacherService.findAllTeacher()) {
-			System.out.println(teacher.getPersonInfo() + teacher.getSubject());
-		}
+		gradeService.findTeacherByGradeId(3);
+		
+//		for(Grade grade : gradeService.getGrade()) {
+//			System.out.println(grade.getGradeNo() + " " + grade.getGradeId() + grade.getTeachers());
+//		}
+	
+		
+//		for(Teacher teacher : teacherService.findAllTeacher()) {
+//			System.out.println(teacher.getTeacherId() + "|" + teacher.getPersonInfo() + "|" + teacher.getGrade() + "|" + teacher.getSubject() + "|");
+//		}
+		
+//		List<Teacher> teachers = teacherService.findAll();
+//		for (Teacher teacher: teachers) {
+//			System.out.println(teacher.getPersonInfo()+ "Subject = " + teacher.getSubject() + "GradeNo = " + teacher.getGrade().getGradeNo());
+//		}
+		
+		
+		
+		
+		
+//		for(Teacher teacher : teacherService.findAllTeacher()) {
+//			System.out.println(teacher.getTeacherId() + "|" + teacher.getPersonInfo() + "|" + teacher.getGrade() + "|" + teacher.getSubject() + "|");
+//		}
 	}
 
 }

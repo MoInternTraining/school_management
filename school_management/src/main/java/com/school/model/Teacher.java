@@ -51,8 +51,6 @@ public class Teacher {
 		this.subject = subject;
 	}
 
-	
-
 	public Teacher() {
 		super();
 	}
