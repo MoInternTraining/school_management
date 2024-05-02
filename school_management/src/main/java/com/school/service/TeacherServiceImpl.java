@@ -20,26 +20,26 @@ import jakarta.transaction.Transactional;
 
 @Service
 @Transactional
-public class TeacherServiceImpl implements TeacherService{
+public class TeacherServiceImpl implements TeacherService {
 	@Autowired
 	private PersonInfoRepository personInfoRepository;
-	
+
 	@Autowired
 	private TeacherRepository teacherRepository;
-	
+
 	@Autowired
 	private GradeRepository gradeRepository;
-	
+
 	@Autowired
 	private EntityManager entityManager;
-	
+
 	public void keepTeacherRecord(Teacher teacher) {
 		this.teacherRepository.saveAndFlush(teacher);
 	}
 
 	@Override
 	public void deleteTeacherRecord(int personId) {
-		this.teacherRepository.deleteById(personId);		
+		this.teacherRepository.deleteById(personId);
 	}
 
 //	@Override
@@ -79,28 +79,28 @@ public class TeacherServiceImpl implements TeacherService{
 //		System.out.println("Done");
 //	
 	@Override
-    public void updateOrCreateTeacherRecord(PersonInfo teacherPersonInfo, Teacher teacher, int gradeId, String subject) {
-        Optional<Teacher> aTeacher = this.teacherRepository.findById(teacher.getTeacherId());
-        Teacher tch = aTeacher.isPresent() ? aTeacher.get() : new Teacher();
-        if (!aTeacher.isPresent()) {
+	public void updateOrCreateTeacherRecord(PersonInfo teacherPersonInfo, Teacher teacher, int gradeId,
+			String subject) {
+		Optional<Teacher> aTeacher = this.teacherRepository.findById(teacher.getTeacherId());
+		Teacher tch = aTeacher.isPresent() ? aTeacher.get() : new Teacher();
+		if (!aTeacher.isPresent()) {
 //                Teacher tch = new Teacher();
 //                tch.setPersonInfo(entityManager.merge(teacherPersonInfo));
-                tch.setPersonInfo(teacherPersonInfo);
-        } 
-        else {
+			tch.setPersonInfo(teacherPersonInfo);
+		} else {
 //            Teacher tch =  aTeacher.get();
-            tch.getPersonInfo().setAddress(teacherPersonInfo.getAddress());
-            tch.getPersonInfo().setDob(teacherPersonInfo.getDob());
-            tch.getPersonInfo().setEmail(teacherPersonInfo.getEmail());
-            tch.getPersonInfo().setFatherName(teacherPersonInfo.getFatherName());
-            tch.getPersonInfo().setGender(teacherPersonInfo.getGender());
-            tch.getPersonInfo().setName(teacherPersonInfo.getName());       
-        }
-        tch.setSubject(subject);
-        tch.setGrade(gradeRepository.findById(gradeId).get());
-        this.teacherRepository.save(tch);
-    }
-	
+			tch.getPersonInfo().setAddress(teacherPersonInfo.getAddress());
+			tch.getPersonInfo().setDob(teacherPersonInfo.getDob());
+			tch.getPersonInfo().setEmail(teacherPersonInfo.getEmail());
+			tch.getPersonInfo().setFatherName(teacherPersonInfo.getFatherName());
+			tch.getPersonInfo().setGender(teacherPersonInfo.getGender());
+			tch.getPersonInfo().setName(teacherPersonInfo.getName());
+		}
+		tch.setSubject(subject);
+		tch.setGrade(gradeRepository.findById(gradeId).get());
+		this.teacherRepository.save(tch);
+	}
+
 //	public void updateOrCreateTeacherRecord(Teacher teacher, int gradeId, String subject) {
 //		Optional<Teacher> opteacher = teacherRepository.findById(teacher.getTeacherId());
 //		Teacher tch;
@@ -115,20 +115,21 @@ public class TeacherServiceImpl implements TeacherService{
 //			this.teacherRepository.save(teacher);
 //		}
 //	}
-	
+
 	@Override
 	public void keepTeacherRecord(PersonInfo teacherPersonInfo, int gradeId, String subject) {
 		Teacher tch = new Teacher(teacherPersonInfo, subject);
 		tch.setGrade(gradeRepository.findById(gradeId).get());
 		this.teacherRepository.save(tch);
 	}
-	
+
 	public List<Teacher> findAll() {
 		List<Teacher> teacher = this.teacherRepository.findAll();
 		return teacher;
 	}
-	
-	public List<Teacher> findAllTeacher(){
+
+	public List<Teacher> findAllTeacher() {
 		List<Teacher> teacher = this.teacherRepository.findAll();
-		return teacher;	}
+		return teacher;
+	}
 }

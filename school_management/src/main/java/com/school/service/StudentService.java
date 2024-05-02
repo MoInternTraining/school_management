@@ -10,9 +10,9 @@ import com.school.model.Student;
 public interface StudentService {
 	public Student keepStudentRecord(Student student);
 	
-	public void deleteStudentAllRecord();
+	public void deleteStudentAllRecord(int studentId);
 
-	public void updateStudentRecord(Student student);
+	public void updateOrCreateStudentRecord(PersonInfo studentPersonInfo, Student student, int gradeId, int classroomId);
 
 	public void keepStudentRecord(PersonInfo studentPersonInfo, int i, int j);
 	
