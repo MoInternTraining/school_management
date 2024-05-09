@@ -1,9 +1,6 @@
 package com.school.service;
-<<<<<<< HEAD
 
 import java.util.List;
-=======
->>>>>>> 43b92f638d5776de10ffedcf5da8e80f2f523130
 
 import com.school.model.Grade;
 import com.school.model.PersonInfo;
@@ -19,7 +16,6 @@ public interface TeacherService {
 
 	public void keepTeacherRecord(PersonInfo teacherPersonInfo, int gradeId, String subject);
 	
-	public List<Teacher> showAllTeacherRecords();
+	public List<Teacher> findAll();
 
-	void updateOrCreateTeacherRecord(PersonInfo teacherPersonInfo, int gradeId, String subject);
 }

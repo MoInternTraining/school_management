@@ -15,7 +15,7 @@ import com.school.model.Student;
 import com.school.repository.ClassroomRepository;
 import com.school.repository.GradeRepository;
 import com.school.repository.StudentRepository;
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
 import lombok.Data;
 
 @Service

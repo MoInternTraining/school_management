@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.school.model.Grade;
 import com.school.repository.GradeRepository;
 
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
 
 @Service
 @Transactional

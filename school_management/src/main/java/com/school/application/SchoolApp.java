@@ -1,9 +1,6 @@
 package com.school.application;
 
-<<<<<<< HEAD
-=======
 import java.util.ArrayList;
->>>>>>> 43b92f638d5776de10ffedcf5da8e80f2f523130
 import java.util.List;
 
 import org.springframework.context.ApplicationContext;
@@ -30,12 +27,8 @@ public class SchoolApp {
 		GradeService gradeService = ctx.getBean(GradeService.class);
 		ClassroomService classroomService = ctx.getBean(ClassroomService.class);
 	
-		PersonInfo personInfo = new PersonInfo("SamuelChaungDu", "10-10-99", 'F', "UChaungDu", "598888", "@gmail.com", "Dagon");
-		teacherService.updateOrCreateTeacherRecord(personInfo, 4, 1, "Laravel");
-
-<<<<<<< HEAD
 //		PersonInfo studentPersonInfo1 = new PersonInfo("Mg Mg", "5-7-2005", 'M', "U Ba", "09-123456789", "MgMg123@gmail.com", "Yangon");		
-//		studentService.keepStudentRecord(studentPersonInfo1, 3, 5);
+//		studentService.keepStudentRecord(studentPersonInfo1, 1, 6);
 //		
 //		PersonInfo studentPersonInfo2 = new PersonInfo("Hla Hla", "10-10-2008", 'F', "U Kaung", "09-567567567", "HlaHla567@gmail.com", "Mandalay");
 //		studentService.keepStudentRecord(studentPersonInfo2, 2, 3);
@@ -60,16 +53,11 @@ public class SchoolApp {
 //			System.out.println(teacher.getPersonInfo());
 //		}
 		
-		PersonInfo teacherPersonInfo2 = new PersonInfo(9, "U Yan", "10-10-1999", 'M', "U Paung", "09-55555", "uyan555@gmail.com", "Mandalay");
-		teacherService.updateOrCreateTeacherRecord(teacherPersonInfo2, 7, "English");
-=======
-		
 		List <Student> students1 = studentService.findAllStudents();
 		
 		for (Student student : students1) {
 			System.out.println(student.getPersonInfo());
 		}
->>>>>>> 43b92f638d5776de10ffedcf5da8e80f2f523130
 	}
 
 }

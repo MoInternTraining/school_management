@@ -2,13 +2,13 @@ package com.school.model;
 
 import java.sql.Date;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import lombok.Data;
 
 @Data
@@ -60,5 +60,17 @@ public class PersonInfo {
 	public PersonInfo(int personId) {
 		super();
 		this.personId = personId;
+	}
+
+	public PersonInfo(String name, String dob, char gender, String fatherName, String phoneNo, String email,
+			String address) {
+		super();
+		this.name = name;
+		this.dob = dob;
+		this.gender = gender;
+		this.fatherName = fatherName;
+		this.phoneNo = phoneNo;
+		this.email = email;
+		this.address = address;
 	}
 }
