@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.school.model.PersonInfo;
 import com.school.repository.PersonInfoRepository;
 
+import antlr.collections.List;
 import jakarta.transaction.Transactional;
 
 @Service
@@ -17,4 +18,6 @@ public class PersonInfoServiceImpl implements PersonInfoService {
 	public void keepPersonInfo(PersonInfo personInfo) {
 		this.personInfoRepository.saveAndFlush(personInfo);
 	}
+	
+	
 }

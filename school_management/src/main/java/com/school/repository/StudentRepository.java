@@ -11,8 +11,6 @@ import com.school.model.Student;
 
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Integer>{
-//	@Query(nativeQuery = true, value = "Select grade_id from grade where grade_id=:grade_id")
-//	public int findGradeID(@Param("grade_id") int grade_id);
 	
 	@Query(nativeQuery = true, value = "Select * from student")
 	public List<Student> findAllStudentRecords();

@@ -1,5 +1,9 @@
 package com.school.application;
 
+<<<<<<< HEAD
+=======
+import java.util.ArrayList;
+>>>>>>> 43b92f638d5776de10ffedcf5da8e80f2f523130
 import java.util.List;
 
 import org.springframework.context.ApplicationContext;
@@ -11,6 +15,7 @@ import com.school.model.Grade;
 import com.school.model.PersonInfo;
 import com.school.model.Student;
 import com.school.model.Teacher;
+import com.school.service.ClassroomService;
 import com.school.service.GradeService;
 import com.school.service.PersonInfoService;
 import com.school.service.StudentService;
@@ -19,11 +24,16 @@ import com.school.service.TeacherService;
 public class SchoolApp {
 	public static void main(String[] args) {
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(ApplicationConfig.class);
+
 		StudentService studentService = ctx.getBean(StudentService.class);
 		TeacherService teacherService = ctx.getBean(TeacherService.class);
 		GradeService gradeService = ctx.getBean(GradeService.class);
-		
+		ClassroomService classroomService = ctx.getBean(ClassroomService.class);
+	
+		PersonInfo personInfo = new PersonInfo("SamuelChaungDu", "10-10-99", 'F', "UChaungDu", "598888", "@gmail.com", "Dagon");
+		teacherService.updateOrCreateTeacherRecord(personInfo, 4, 1, "Laravel");
 
+<<<<<<< HEAD
 //		PersonInfo studentPersonInfo1 = new PersonInfo("Mg Mg", "5-7-2005", 'M', "U Ba", "09-123456789", "MgMg123@gmail.com", "Yangon");		
 //		studentService.keepStudentRecord(studentPersonInfo1, 3, 5);
 //		
@@ -52,5 +62,14 @@ public class SchoolApp {
 		
 		PersonInfo teacherPersonInfo2 = new PersonInfo(9, "U Yan", "10-10-1999", 'M', "U Paung", "09-55555", "uyan555@gmail.com", "Mandalay");
 		teacherService.updateOrCreateTeacherRecord(teacherPersonInfo2, 7, "English");
+=======
+		
+		List <Student> students1 = studentService.findAllStudents();
+		
+		for (Student student : students1) {
+			System.out.println(student.getPersonInfo());
+		}
+>>>>>>> 43b92f638d5776de10ffedcf5da8e80f2f523130
 	}
+
 }

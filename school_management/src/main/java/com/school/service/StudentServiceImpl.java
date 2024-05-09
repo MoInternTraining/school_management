@@ -3,6 +3,7 @@ package com.school.service;
 import java.util.List;
 
 import javax.management.loading.ClassLoaderRepository;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,8 +15,8 @@ import com.school.model.Student;
 import com.school.repository.ClassroomRepository;
 import com.school.repository.GradeRepository;
 import com.school.repository.StudentRepository;
-
 import jakarta.transaction.Transactional;
+import lombok.Data;
 
 @Service
 @Transactional
@@ -52,7 +53,15 @@ public class StudentServiceImpl implements StudentService {
 		this.studentRepository.save(stu);
 	}
 	
-	public List<Student> findStudents() {
+
+	
+	public List<Student> findAllStudents(){
 		return this.studentRepository.findAll();
+	}
+
+	@Override
+	public List<Student> findAll() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

@@ -16,5 +16,8 @@ public interface StudentService {
 
 	public void keepStudentRecord(PersonInfo studentPersonInfo, int i, int j);
 	
-	public List<Student> findStudents();
+	public List<Student> findAll();
+	
+	public List<Student> findAllStudents();
+	
 }
