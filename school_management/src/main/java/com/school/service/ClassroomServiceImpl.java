@@ -8,7 +8,7 @@ import com.school.model.Classroom;
 import com.school.model.Student;
 import com.school.repository.ClassroomRepository;
 
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
 
 @Service
 @Transactional

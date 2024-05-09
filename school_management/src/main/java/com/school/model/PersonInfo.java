@@ -2,13 +2,13 @@ package com.school.model;
 
 import java.sql.Date;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import lombok.Data;
 
 @Data
@@ -45,7 +45,7 @@ public class PersonInfo {
 		super();
 	}
 	
-	public PersonInfo(String name, String dob, char gender, String fatherName, String phoneNo, String email,
+	public PersonInfo(int personId, String name, String dob, char gender, String fatherName, String phoneNo, String email,
 			String address) {
 		super();
 		this.name = name;
@@ -62,10 +62,10 @@ public class PersonInfo {
 		this.personId = personId;
 	}
 
-	public PersonInfo(int personId, String name, String dob, char gender, String fatherName, String phoneNo,
-			String email, String address) {
+
+	public PersonInfo(String name, String dob, char gender, String fatherName, String phoneNo, String email,
+			String address) {
 		super();
-		this.personId = personId;
 		this.name = name;
 		this.dob = dob;
 		this.gender = gender;
@@ -74,5 +74,4 @@ public class PersonInfo {
 		this.email = email;
 		this.address = address;
 	}
-	
 }

@@ -11,7 +11,7 @@ import com.school.model.Student;
 import com.school.model.Teacher;
 import com.school.repository.GradeRepository;
 
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
 
 @Service
 @Transactional

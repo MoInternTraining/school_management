@@ -1,15 +1,16 @@
 package com.school.model;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -47,7 +48,6 @@ public class Teacher {
 		this.grade = grade;
 		this.personInfo = teacherPersonInfo;
 	}
-
 	public Teacher(PersonInfo teacherPersonInfo, String subject) {
 		super();
 		this.personInfo = teacherPersonInfo;
@@ -57,7 +57,6 @@ public class Teacher {
 	public Teacher() {
 		super();
 	}
-
 	public Teacher(int teacherId, String subject, Grade grade, PersonInfo personInfo) {
 		super();
 		this.teacherId = teacherId;

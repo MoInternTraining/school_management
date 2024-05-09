@@ -9,7 +9,7 @@ import com.school.model.PersonInfo;
 import com.school.repository.PersonInfoRepository;
 
 import antlr.collections.List;
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
 
 @Service
 @Transactional

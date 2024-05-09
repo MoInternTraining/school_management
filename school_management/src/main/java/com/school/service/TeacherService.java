@@ -21,5 +21,4 @@ public interface TeacherService {
 	public List<Teacher> findAll();
 	
 	public List<Teacher> findAllTeacher();
-	
 }

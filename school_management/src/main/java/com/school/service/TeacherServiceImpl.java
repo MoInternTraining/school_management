@@ -1,6 +1,9 @@
 package com.school.service;
 
+
+import java.util.List;
 import java.util.NoSuchElementException;
+import java.lang.StackWalker.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,8 +18,9 @@ import com.school.repository.GradeRepository;
 import com.school.repository.PersonInfoRepository;
 import com.school.repository.TeacherRepository;
 
-import jakarta.persistence.EntityManager;
-import jakarta.transaction.Transactional;
+
+import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 
 @Service
 @Transactional
@@ -25,13 +29,12 @@ public class TeacherServiceImpl implements TeacherService {
 	private PersonInfoRepository personInfoRepository;
 
 	@Autowired
+	private EntityManager entityManager;
+	@Autowired
 	private TeacherRepository teacherRepository;
 
 	@Autowired
 	private GradeRepository gradeRepository;
-
-	@Autowired
-	private EntityManager entityManager;
 
 	public void keepTeacherRecord(Teacher teacher) {
 		this.teacherRepository.saveAndFlush(teacher);
@@ -118,7 +121,7 @@ public class TeacherServiceImpl implements TeacherService {
 
 	@Override
 	public void keepTeacherRecord(PersonInfo teacherPersonInfo, int gradeId, String subject) {
-		Teacher tch = new Teacher(teacherPersonInfo, subject);
+		Teacher tch = new Teacher(teacherPersonInfo, subject);	
 		tch.setGrade(gradeRepository.findById(gradeId).get());
 		this.teacherRepository.save(tch);
 	}

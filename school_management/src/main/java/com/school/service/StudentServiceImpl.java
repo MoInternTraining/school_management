@@ -1,5 +1,7 @@
 package com.school.service;
 
+import java.util.List;
+
 import javax.management.loading.ClassLoaderRepository;
 import java.util.List;
 import java.util.Optional;
@@ -15,7 +17,7 @@ import com.school.model.Teacher;
 import com.school.repository.ClassroomRepository;
 import com.school.repository.GradeRepository;
 import com.school.repository.StudentRepository;
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
 import lombok.Data;
 
 @Service
@@ -48,9 +50,7 @@ public class StudentServiceImpl implements StudentService {
 		this.studentRepository.save(stu);
 	}
 	
-	public List<Student> findAll() {
-		return this.studentRepository.findAll();
-	}
+
 	
 	public List<Student> findAllStudents(){
 		return this.studentRepository.findAll();
