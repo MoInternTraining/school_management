@@ -13,10 +13,13 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 import net.bytebuddy.asm.Advice.This;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "grade")
 public class Grade {
@@ -24,11 +27,10 @@ public class Grade {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "grade_id", unique = false)
-	@ToString.Exclude
 	private int gradeId;
 
 	@Column(name = "grade_no")
-	@ToString.Exclude
+//	@ToString.Exclude
 	private int gradeNo;
 
 	@OneToMany(mappedBy = "grade", fetch = FetchType.EAGER)
@@ -58,8 +60,5 @@ public class Grade {
 		this.gradeId = grade.getGradeId();
 	}
 
-	@Override
-	public String toString() {
-		return "Grade [gradeId=" + gradeId + ", gradeNo=" + gradeNo + "]";
-	}
+	
 }

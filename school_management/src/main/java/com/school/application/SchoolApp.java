@@ -26,9 +26,9 @@ public class SchoolApp {
 		StudentService studentService = ctx.getBean(StudentService.class);
 		TeacherService teacherService = ctx.getBean(TeacherService.class);
 		GradeService gradeService = ctx.getBean(GradeService.class);
-		
+
 //		studentService.keepStudentRecord(studentPersonInfo, 3, 5);
-		
+
 //		PersonInfo teacherPersonInfo = new PersonInfo("Daw Aye", "9-3-1990", 'F', "U Win Lwin", "09-987987987", "DawAye987@gmail.com", "Yangon");
 
 //		
@@ -39,8 +39,6 @@ public class SchoolApp {
 //		PersonInfo personInfo = new PersonInfo("SamuelChaungDu", "10-10-99", 'F', "UChaungDu", "598888", "@gmail.com", "Dagon");
 //		teacherService.updateOrCreateTeacherRecord(personInfo, 4, 1, "Laravel");
 
-		
-		
 //		PersonInfo teacherPersonInfo = new PersonInfo("Daw Mya", "9-3-1990", 'F', "U Win Aung", "09-545618945", "DawMya987@gmail.com", "Yangon");
 //
 //		teacherService.keepTeacherRecord(teacherPersonInfo, 10, "Math");
@@ -50,34 +48,29 @@ public class SchoolApp {
 //		Teacher teacher = new Teacher(17);
 //		teacherService.updateOrCreateTeacherRecord(teacherPersonInfo, teacher,  3, "Java");
 
-
 //		studentService.keepStudentRecord(studentPersonInfo);
 //		studentService.keepStudentRecord(studentPersonInfo, 2, 5);
-		
+
 //		PersonInfo teacherPersonInfo1 = new PersonInfo("DawAyeAye", "3-10-1880", 'F', "UThaung", "09-345345345", "fhjnfhgg345@gmail.com", "Yangon");
 //		teacherService.keepTeacherRecord(teacherPersonInfo1, 4, "Math");
 
 //		teacherService.deleteTeacherRecord();
-		
+
 //		personInfoService.keepPersonInfo(new PersonInfo("Hla Hla", "10-10-2008", 'F', "U Kaung", "09-567567567", "HlaHla567@gmail.com", "Mandalay"));
 //		personInfoService.keepPersonInfo(new PersonInfo("Tun Tun", "3-8-2006", 'M', "U Soe", "09-987987987", "TunTun987@gmail.com", "Mandalay"));
-		
-		
+
 //		studentService.keepStudentRecord(new Student(studentPersonInfo, classroom, student.setGradeID(studentService.getGradeID(3))));
 
-		//		Student student = new Student(studentPersonInfo, classroom, grade.getGradeId());
+		// Student student = new Student(studentPersonInfo, classroom,
+		// grade.getGradeId());
 //		PersonInfo studentPersonInfo = new PersonInfo("MgMg", "5-7-2005", 'F', "U Ba", "09-123456789", "MgMg123@gmail.com", "Yangon");
-		
-		
-		
+
 //		PersonInfo studentPersonInfo1 = new PersonInfo("MgMg", "5-7-2005", 'M', "UBa", "09-123456789", "MgMg123@gmail.com", "Yangon");
 //
 //
 //		studentService.keepStudentRecord(studentPersonInfo, 2, 6);
 //		studentService.keepStudentRecord(studentPersonInfo1, 2, 6);
-		
-		
-		
+
 //		
 //		teacherService.keepTeacherRecord(new Teacher("English", gradeTaughtByTeacher, teacherPersonInfo));
 //		List <Student> students1 = studentService.findAllStudents();
@@ -85,29 +78,30 @@ public class SchoolApp {
 //		for (Student student : students1) {
 //			System.out.println(student.getPersonInfo());
 //		}
-		
+
 //		teacherService.deleteTeacherRecord(18);
-		
+
 		gradeService.findTeacherByGradeId(3);
-		
+
 //		for(Grade grade : gradeService.getGrade()) {
 //			System.out.println(grade.getGradeNo() + " " + grade.getGradeId() + grade.getTeachers());
 //		}
-	
-		
-//		for(Teacher teacher : teacherService.findAllTeacher()) {
-//			System.out.println(teacher.getTeacherId() + "|" + teacher.getPersonInfo() + "|" + teacher.getGrade() + "|" + teacher.getSubject() + "|");
-//		}
-		
+
+		System.out.println("All Teachers" + teacherService.findAllTeacher());
+
+		for (Teacher teacher : teacherService.findAllTeacher()) {
+			System.out.println(teacher);
+			Grade grade = teacher.getGrade();
+			System.out.print(grade.getGradeId());
+			System.out.println(teacher.getTeacherId() + "|" + teacher.getPersonInfo() + "|" + teacher.getGrade() + "|"
+					+ teacher.getSubject() + "|");
+		}
+
 //		List<Teacher> teachers = teacherService.findAll();
 //		for (Teacher teacher: teachers) {
 //			System.out.println(teacher.getPersonInfo()+ "Subject = " + teacher.getSubject() + "GradeNo = " + teacher.getGrade().getGradeNo());
 //		}
-		
-		
-		
-		
-		
+
 //		for(Teacher teacher : teacherService.findAllTeacher()) {
 //			System.out.println(teacher.getTeacherId() + "|" + teacher.getPersonInfo() + "|" + teacher.getGrade() + "|" + teacher.getSubject() + "|");
 //		}
