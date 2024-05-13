@@ -81,16 +81,15 @@ public class SchoolApp {
 
 //		teacherService.deleteTeacherRecord(18);
 
-		gradeService.findTeacherByGradeId(3);
+//		gradeService.findTeacherByGradeId(3);
 
 //		for(Grade grade : gradeService.getGrade()) {
 //			System.out.println(grade.getGradeNo() + " " + grade.getGradeId() + grade.getTeachers());
 //		}
 
-		System.out.println("All Teachers" + teacherService.findAllTeacher());
+//		System.out.println("All Teachers" + teacherService.findAllTeacher());
 
 		for (Teacher teacher : teacherService.findAllTeacher()) {
-			System.out.println(teacher);
 			Grade grade = teacher.getGrade();
 			System.out.print(grade.getGradeId());
 			System.out.println(teacher.getTeacherId() + "|" + teacher.getPersonInfo() + "|" + teacher.getGrade() + "|"

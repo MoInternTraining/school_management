@@ -15,9 +15,7 @@ public interface StudentService {
 	public void updateOrCreateStudentRecord(PersonInfo studentPersonInfo, Student student, int gradeId, int classroomId);
 
 	public void keepStudentRecord(PersonInfo studentPersonInfo, int i, int j);
-	
-	public List<Student> findAll();
-	
+		
 	public List<Student> findAllStudents();
 	
 }
